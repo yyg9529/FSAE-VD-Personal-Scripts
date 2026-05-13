@@ -4,9 +4,9 @@ function KPI = CalculateKPI(result)
     % the heave zeta of the car.
 
     % Settle time setup, change if the shaker input is changed.
-    simStartTime = 10;
-    simEndTime = 30;
-    timeTol = 0.05;
+    simStartTime = 11;
+    simEndTime = 40;
+    timeTol = 0.03;
 
     rawTime = result.logsout.get("Front CPL").Values.Time;
 
@@ -96,4 +96,5 @@ function KPI = CalculateKPI(result)
     KPI.bodyPitchRMS = max(bodyPitch(simInterval));
     KPI.hubPitchRMS = max(hubPitch(simInterval));
     KPI.heaveZeta = zeta;
+    
 end
